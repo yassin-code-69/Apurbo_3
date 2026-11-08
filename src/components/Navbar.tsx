@@ -45,7 +45,7 @@ export function Navbar({ onSelectService, onBookSurvey }: NavbarProps) {
 
   return (
     <>
-      {/* Main Sticky Header — Mathematically Centered 3-Zone Grid on Desktop */}
+      {/* Main Sticky Header — Fully Responsive 3-Zone Layout */}
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
@@ -53,8 +53,8 @@ export function Navbar({ onSelectService, onBookSurvey }: NavbarProps) {
             : "bg-white/95 backdrop-blur-md border-b border-[#e5ece2]"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[74px] flex items-center justify-between xl:grid xl:grid-cols-[1fr_auto_1fr] gap-4">
-          {/* Left Zone: Crisp Single-Line Logo */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] sm:h-[76px] flex items-center justify-between xl:grid xl:grid-cols-[auto_1fr_auto] gap-3 sm:gap-4">
+          {/* Left Zone: Crisp Logo */}
           <div className="flex items-center justify-start shrink-0">
             <a
               href="#top"
@@ -65,8 +65,8 @@ export function Navbar({ onSelectService, onBookSurvey }: NavbarProps) {
             </a>
           </div>
 
-          {/* Center Zone: Perfectly Centered Single-Line Nav Links */}
-          <nav className="hidden lg:flex items-center justify-center gap-1 xl:gap-1.5">
+          {/* Center Zone: Full Nav on Desktop (xl:flex) */}
+          <nav className="hidden xl:flex items-center justify-center gap-1.5">
             <div className="relative" ref={dropdownRef}>
               <button
                 type="button"
@@ -89,7 +89,7 @@ export function Navbar({ onSelectService, onBookSurvey }: NavbarProps) {
               {servicesOpen && (
                 <div
                   onMouseLeave={() => setServicesOpen(false)}
-                  className="absolute left-1/2 -translate-x-1/3 top-full pt-3 w-[640px] z-50"
+                  className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[640px] z-50"
                 >
                   <div className="bg-white rounded-2xl shadow-[0_24px_60px_rgba(12,31,20,0.16)] border border-[#dfe6dc] p-5">
                     <div className="flex items-center justify-between pb-3.5 mb-3.5 border-b border-[#edf2ea]">
@@ -174,43 +174,44 @@ export function Navbar({ onSelectService, onBookSurvey }: NavbarProps) {
             ))}
           </nav>
 
-          {/* Right Zone: Identical-Height Single-Line Phone Pill + Quote CTA */}
-          <div className="hidden md:flex items-center justify-end gap-2.5 shrink-0">
+          {/* Right Zone: Action Buttons + Mobile/Tablet Drawer Toggle */}
+          <div className="flex items-center justify-end gap-2 sm:gap-2.5 shrink-0">
+            {/* Phone link on tablet & desktop */}
             <a
               href={COMPANY_INFO.phoneHref}
-              className="hidden xl:inline-flex items-center gap-2 h-10 px-3.5 rounded-xl border border-[#d6e2d3] bg-[#f7faf6] hover:border-[#2f9e35] text-[#0c1f14] whitespace-nowrap shrink-0 transition-all group"
+              className="hidden sm:inline-flex items-center gap-2 h-10 px-3 sm:px-3.5 rounded-xl border border-[#d6e2d3] bg-[#f7faf6] hover:border-[#2f9e35] text-[#0c1f14] whitespace-nowrap shrink-0 transition-all group"
             >
               <Phone className="w-3.5 h-3.5 text-[#2f9e35] shrink-0 group-hover:scale-110 transition-transform" />
-              <span className="font-mono font-bold text-sm tracking-tight text-[#0c1f14] whitespace-nowrap">
+              <span className="font-mono font-bold text-xs sm:text-sm tracking-tight text-[#0c1f14] whitespace-nowrap">
                 {COMPANY_INFO.phoneDisplay}
               </span>
             </a>
 
+            {/* Quote CTA Button */}
             <button
               type="button"
               onClick={() => onBookSurvey()}
-              className="inline-flex items-center justify-center gap-2 h-10 px-4.5 rounded-xl bg-[#2f9e35] hover:bg-[#25852a] text-white font-semibold text-sm whitespace-nowrap shrink-0 shadow-[0_6px_16px_rgba(47,158,53,0.24)] hover:shadow-[0_10px_22px_rgba(47,158,53,0.34)] transition-all cursor-pointer"
+              className="hidden xs:inline-flex items-center justify-center gap-1.5 sm:gap-2 h-10 px-3 sm:px-4.5 rounded-xl bg-[#2f9e35] hover:bg-[#25852a] text-white font-semibold text-xs sm:text-sm whitespace-nowrap shrink-0 shadow-[0_6px_16px_rgba(47,158,53,0.24)] hover:shadow-[0_10px_22px_rgba(47,158,53,0.34)] transition-all cursor-pointer"
             >
               <span>Get a Free Quote</span>
-              <ArrowRight className="w-4 h-4 shrink-0" />
+              <ArrowRight className="w-4 h-4 shrink-0 hidden sm:inline" />
             </button>
-          </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className="flex items-center gap-2 md:hidden shrink-0">
+            {/* Phone on Extra-Small screens */}
             <a
               href={COMPANY_INFO.phoneHref}
               aria-label="Call Freephone 0800 001 6233"
-              className="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg bg-[#eef6ee] text-[#1e7b24] font-mono text-xs font-semibold whitespace-nowrap"
+              className="xs:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[#eef6ee] text-[#1e7b24]"
             >
-              <Phone className="w-3.5 h-3.5 shrink-0" />
-              <span>0800 001 6233</span>
+              <Phone className="w-4 h-4 shrink-0" />
             </a>
+
+            {/* Hamburger Menu Toggle (Visible on < xl screens) */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen((prev) => !prev)}
-              aria-label="Toggle Menu"
-              className="w-10 h-10 rounded-xl border border-[#dfe6dc] text-[#0c1f14] hover:bg-[#f0f4ee] flex items-center justify-center"
+              aria-label="Toggle Navigation Menu"
+              className="xl:hidden w-10 h-10 rounded-xl border border-[#dfe6dc] text-[#0c1f14] hover:bg-[#f0f4ee] flex items-center justify-center transition-colors cursor-pointer"
             >
               {mobileMenuOpen ? (
                 <X className="w-5 h-5" />
@@ -223,7 +224,7 @@ export function Navbar({ onSelectService, onBookSurvey }: NavbarProps) {
 
         {/* Mobile & Tablet Nav Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-[#dfe6dc] px-4 pt-3 pb-6 shadow-2xl max-h-[calc(100vh-4.625rem)] overflow-y-auto">
+          <div className="xl:hidden bg-white border-t border-[#dfe6dc] px-4 pt-3 pb-6 shadow-2xl max-h-[calc(100vh-4.625rem)] overflow-y-auto">
             <div className="space-y-1">
               <button
                 type="button"

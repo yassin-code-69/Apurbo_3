@@ -68,7 +68,7 @@ export function ServicesSection({
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-10">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-8 sm:mb-10">
           {CATEGORIES.map((cat) => {
             const Icon = cat.icon;
             const active = activeCategory === cat.id;
@@ -77,14 +77,14 @@ export function ServicesSection({
                 key={cat.id}
                 type="button"
                 onClick={() => setActiveCategory(cat.id)}
-                className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer ${
+                className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   active
                     ? "bg-[#0c1f14] text-white shadow-[0_8px_20px_rgba(12,31,20,0.18)]"
                     : "bg-white text-[#2c4233] border border-[#dce4d9] hover:border-[#2f9e35] hover:text-[#1f7a24]"
                 }`}
               >
                 <Icon
-                  className={`w-4 h-4 ${
+                  className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${
                     active ? "text-[#5ce65c]" : "text-[#2f9e35]"
                   }`}
                 />
@@ -181,15 +181,15 @@ export function ServicesSection({
       {/* Interactive Service Specification Modal */}
       {selectedServiceModal && (
         <div
-          className="fixed inset-0 z-[70] bg-[#07130c]/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 z-[70] bg-[#07130c]/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
           onClick={() => onSelectServiceModal(null)}
         >
           <div
-            className="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-[0_30px_90px_rgba(0,0,0,0.45)] border border-[#dce4d9] my-8"
+            className="bg-white rounded-2xl sm:rounded-3xl max-w-2xl w-full overflow-hidden shadow-[0_30px_90px_rgba(0,0,0,0.45)] border border-[#dce4d9] my-4 sm:my-8"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Image Header */}
-            <div className="relative h-60 sm:h-68 w-full bg-[#0c1f14]">
+            <div className="relative h-48 sm:h-64 w-full bg-[#0c1f14]">
               <Image
                 src={selectedServiceModal.image}
                 alt={selectedServiceModal.title}
@@ -203,30 +203,30 @@ export function ServicesSection({
                 type="button"
                 onClick={() => onSelectServiceModal(null)}
                 aria-label="Close specification modal"
-                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/55 hover:bg-black/80 text-white flex items-center justify-center transition-colors cursor-pointer"
+                className="absolute top-3 sm:top-4 right-3 sm:right-4 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-colors cursor-pointer z-10"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="absolute bottom-5 left-6 right-6 text-white">
-                <span className="inline-block px-2.5 py-1 rounded-full bg-[#3aa63a] text-white text-xs font-semibold mb-2">
+              <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-6 right-4 sm:right-6 text-white">
+                <span className="inline-block px-2.5 py-1 rounded-full bg-[#3aa63a] text-white text-[11px] sm:text-xs font-semibold mb-1.5 sm:mb-2">
                   {selectedServiceModal.badge}
                 </span>
-                <h3 className="font-display font-extrabold text-2xl sm:text-3xl leading-tight">
+                <h3 className="font-display font-extrabold text-xl sm:text-2xl md:text-3xl leading-tight">
                   {selectedServiceModal.title}
                 </h3>
               </div>
             </div>
 
             {/* Modal Content */}
-            <div className="p-6 sm:p-8 space-y-6 max-h-[65vh] overflow-y-auto">
+            <div className="p-4 sm:p-7 space-y-5 max-h-[60vh] sm:max-h-[65vh] overflow-y-auto">
               <p className="text-sm sm:text-base text-[#394e40] leading-relaxed">
                 {selectedServiceModal.description}
               </p>
 
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div className="bg-[#f6f9f5] rounded-2xl p-4 border border-[#e2ebe0]">
-                  <h4 className="font-display font-bold text-xs uppercase tracking-wider text-[#1e7b24] mb-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-5">
+                <div className="bg-[#f6f9f5] rounded-xl sm:rounded-2xl p-3.5 sm:p-4 border border-[#e2ebe0]">
+                  <h4 className="font-display font-bold text-xs uppercase tracking-wider text-[#1e7b24] mb-2.5 sm:mb-3">
                     Problems This Solves
                   </h4>
                   <ul className="space-y-2">
@@ -242,8 +242,8 @@ export function ServicesSection({
                   </ul>
                 </div>
 
-                <div className="bg-[#f6f9f5] rounded-2xl p-4 border border-[#e2ebe0]">
-                  <h4 className="font-display font-bold text-xs uppercase tracking-wider text-[#0c1f14] mb-3">
+                <div className="bg-[#f6f9f5] rounded-xl sm:rounded-2xl p-3.5 sm:p-4 border border-[#e2ebe0]">
+                  <h4 className="font-display font-bold text-xs uppercase tracking-wider text-[#0c1f14] mb-2.5 sm:mb-3">
                     Our Technical Specification
                   </h4>
                   <ul className="space-y-2">
@@ -260,18 +260,18 @@ export function ServicesSection({
                 </div>
               </div>
 
-              <div className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[#eef6ee] text-[#185e1d] text-xs sm:text-sm font-medium">
+              <div className="flex items-center gap-2.5 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#eef6ee] text-[#185e1d] text-xs sm:text-sm font-medium">
                 <ShieldCheck className="w-4 h-4 shrink-0 text-[#2f9e35]" />
                 <span>{selectedServiceModal.warrantyText}</span>
               </div>
 
               {/* Modal Bottom CTAs */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sm:gap-3 pt-2">
                 <a
                   href={COMPANY_INFO.phoneHref}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-[#d2ded0] text-[#0c1f14] hover:border-[#2f9e35] font-semibold text-sm transition-colors"
+                  className="inline-flex items-center justify-center gap-2 h-11 px-4 sm:px-5 rounded-xl border border-[#d2ded0] text-[#0c1f14] hover:border-[#2f9e35] font-semibold text-xs sm:text-sm transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-[#2f9e35]" />
+                  <Phone className="w-4 h-4 text-[#2f9e35] shrink-0" />
                   <span>Ask an Expert: {COMPANY_INFO.phoneDisplay}</span>
                 </a>
 
@@ -282,10 +282,10 @@ export function ServicesSection({
                     onSelectServiceModal(null);
                     onBookSurvey(chosen);
                   }}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#2f9e35] hover:bg-[#248229] text-white font-semibold text-sm shadow-lg transition-colors cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 h-11 px-5 sm:px-6 rounded-xl bg-[#2f9e35] hover:bg-[#248229] text-white font-semibold text-xs sm:text-sm shadow-md transition-colors cursor-pointer"
                 >
-                  <span>Book Free Survey for {selectedServiceModal.shortTitle}</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>Book Free Survey</span>
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </button>
               </div>
             </div>

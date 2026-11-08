@@ -81,7 +81,7 @@ export function HeroSection({
               <span>Bournemouth, Dorset &amp; UK Sustainable Home Specialists</span>
             </div>
 
-            <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-[-0.03em] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)]">
+            <h1 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-[54px] leading-[1.1] sm:leading-[1.08] tracking-[-0.03em] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)]">
               Making Your Home{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#67ef67] via-[#4ade4a] to-[#a6f7a6]">
                 Warmer, Drier
@@ -89,7 +89,7 @@ export function HeroSection({
               &amp; Energy-Smart.
             </h1>
 
-            <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]">
+            <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed max-w-xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]">
               Experienced quality craftsmen delivering tailored damp proofing,
               breathable{" "}
               <span className="text-white font-semibold">ProPERLA</span> wall
@@ -103,7 +103,7 @@ export function HeroSection({
             </p>
 
             {/* Quick Value Bullets */}
-            <div className="grid sm:grid-cols-2 gap-2.5 pt-1 text-sm text-white/90">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 pt-1 text-xs sm:text-sm text-white/90">
               {[
                 "Watertight yet 100% breathable walls",
                 "Mortgage-ready spray foam removal",
@@ -118,11 +118,11 @@ export function HeroSection({
             </div>
 
             {/* Primary & Secondary CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <button
                 type="button"
                 onClick={() => onBookSurvey()}
-                className="inline-flex items-center justify-center gap-2.5 h-13 px-6 sm:px-7 rounded-xl bg-[#3aa63a] hover:bg-[#2f9e35] text-white font-semibold text-sm sm:text-base whitespace-nowrap shrink-0 shadow-[0_12px_32px_rgba(58,166,58,0.45)] hover:shadow-[0_16px_38px_rgba(58,166,58,0.58)] transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 h-12 sm:h-13 px-5 sm:px-7 rounded-xl bg-[#3aa63a] hover:bg-[#2f9e35] text-white font-semibold text-sm sm:text-base whitespace-nowrap shadow-[0_12px_32px_rgba(58,166,58,0.45)] hover:shadow-[0_16px_38px_rgba(58,166,58,0.58)] transition-all cursor-pointer"
               >
                 <span>Get Your Free Home Survey</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
@@ -130,46 +130,46 @@ export function HeroSection({
 
               <a
                 href={COMPANY_INFO.phoneHref}
-                className="inline-flex items-center justify-center gap-2.5 h-13 px-5 sm:px-6 rounded-xl bg-[#0c2114]/75 hover:bg-[#0c2114]/95 backdrop-blur-md border border-white/25 text-white font-semibold text-sm sm:text-base whitespace-nowrap shrink-0 transition-all"
+                className="inline-flex items-center justify-center gap-2 h-12 sm:h-13 px-5 sm:px-6 rounded-xl bg-[#0c2114]/75 hover:bg-[#0c2114]/95 backdrop-blur-md border border-white/25 text-white font-semibold text-sm sm:text-base whitespace-nowrap transition-all"
               >
                 <Phone className="w-4 h-4 text-[#5ce65c] shrink-0" />
                 <span className="font-mono">{COMPANY_INFO.phoneDisplay}</span>
               </a>
             </div>
 
-            {/* Compact Trust Proof Strip — Baseline Aligned */}
-            <div className="pt-5 border-t border-white/15 grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
+            {/* Compact Trust Proof Strip — Fully Responsive */}
+            <div className="pt-4 sm:pt-5 border-t border-white/15 grid grid-cols-3 gap-2 sm:gap-6 max-w-lg">
               <div>
-                <div className="h-7 flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="font-mono font-bold text-xl text-white">
+                <div className="h-6 sm:h-7 flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
+                  <span className="font-mono font-bold text-lg sm:text-xl text-white">
                     5.0
                   </span>
                   <div className="flex items-center gap-0.5 text-amber-400">
-                    <Star className="w-3.5 h-3.5 fill-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400" />
+                    <Star className="w-3 sm:w-3.5 h-3 sm:h-3.5 fill-amber-400" />
+                    <Star className="w-3 sm:w-3.5 h-3 sm:h-3.5 fill-amber-400" />
+                    <Star className="w-3 sm:w-3.5 h-3 sm:h-3.5 fill-amber-400" />
+                    <Star className="w-3 sm:w-3.5 h-3 sm:h-3.5 fill-amber-400 hidden xs:inline" />
+                    <Star className="w-3 sm:w-3.5 h-3 sm:h-3.5 fill-amber-400 hidden xs:inline" />
                   </div>
                 </div>
-                <p className="text-xs text-white/75 mt-1">
-                  Verified Google Rating
+                <p className="text-[10px] sm:text-xs text-white/75 mt-0.5 sm:mt-1 truncate">
+                  Google Rated
                 </p>
               </div>
               <div>
-                <div className="h-7 flex items-center font-mono font-bold text-xl text-white whitespace-nowrap">
+                <div className="h-6 sm:h-7 flex items-center font-mono font-bold text-lg sm:text-xl text-white whitespace-nowrap">
                   Up to 35%
                 </div>
-                <p className="text-xs text-white/75 mt-1">
-                  Heat Retention Gain
+                <p className="text-[10px] sm:text-xs text-white/75 mt-0.5 sm:mt-1 truncate">
+                  Heat Saved
                 </p>
               </div>
               <div>
-                <div className="h-7 flex items-center font-mono font-bold text-xl text-[#67ef67] whitespace-nowrap">
+                <div className="h-6 sm:h-7 flex items-center font-mono font-bold text-lg sm:text-xl text-[#67ef67] whitespace-nowrap">
                   100% Free
                 </div>
-                <p className="text-xs text-white/75 mt-1">
-                  No-Obligation Quote
+                <p className="text-[10px] sm:text-xs text-white/75 mt-0.5 sm:mt-1 truncate">
+                  No Obligation
                 </p>
               </div>
             </div>
@@ -179,9 +179,10 @@ export function HeroSection({
           <div className="lg:col-span-6">
             <div className="relative rounded-3xl overflow-hidden border border-white/25 shadow-[0_30px_80px_rgba(0,0,0,0.65)] bg-[#0d2216]/90 backdrop-blur-md">
               {/* Top Interactive Instruction Pill */}
-              <div className="absolute top-4 left-4 z-20 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0c1f14]/85 backdrop-blur-md border border-white/20 text-[11px] font-medium text-white/95">
-                <span className="w-2 h-2 rounded-full bg-[#4ade4a] animate-pulse" />
-                <span>Tap any green hotspot to inspect whole-home upgrades</span>
+              <div className="absolute top-3 sm:top-4 left-3 sm:left-4 z-20 inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-[#0c1f14]/85 backdrop-blur-md border border-white/20 text-[10px] sm:text-[11px] font-medium text-white/95">
+                <span className="w-2 h-2 rounded-full bg-[#4ade4a] animate-pulse shrink-0" />
+                <span className="hidden sm:inline">Tap any green hotspot to inspect whole-home upgrades</span>
+                <span className="sm:hidden">Tap hotspots to inspect</span>
               </div>
 
               {/* Property Image */}

@@ -184,13 +184,13 @@ export function ContactSection({
 
           {/* Right Column: Interactive Free Quote & Survey Form */}
           <div className="lg:col-span-7">
-            <div className="bg-[#f8faf7] rounded-3xl border border-[#d9e3d6] p-6 sm:p-10 shadow-[0_20px_50px_rgba(12,31,20,0.06)]">
+            <div className="bg-[#f8faf7] rounded-2xl sm:rounded-3xl border border-[#d9e3d6] p-4 sm:p-10 shadow-[0_20px_50px_rgba(12,31,20,0.06)]">
               {submitted ? (
-                <div className="py-10 text-center space-y-5">
-                  <div className="w-16 h-16 rounded-2xl bg-[#2f9e35]/15 text-[#2f9e35] flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-9 h-9" />
+                <div className="py-8 sm:py-10 text-center space-y-4 sm:space-y-5">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#2f9e35]/15 text-[#2f9e35] flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-8 h-8 sm:w-9 sm:h-9" />
                   </div>
-                  <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-[#0c1f14]">
+                  <h3 className="font-display font-extrabold text-xl sm:text-3xl text-[#0c1f14]">
                     Thank You for Your Inquiry!
                   </h3>
                   <p className="text-sm sm:text-base text-[#465b4d] max-w-md mx-auto leading-relaxed">
@@ -200,10 +200,10 @@ export function ContactSection({
                     hours (usually same working day).
                   </p>
 
-                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
                     <a
                       href={mailtoDirectHref}
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#2f9e35] hover:bg-[#25852a] text-white font-semibold text-sm transition-colors"
+                      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#2f9e35] hover:bg-[#25852a] text-white font-semibold text-sm transition-colors"
                     >
                       <Mail className="w-4 h-4" />
                       <span>Send Directly via Email Client</span>
@@ -218,15 +218,14 @@ export function ContactSection({
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[#e3ebe0]">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3.5 sm:pb-4 border-b border-[#e3ebe0]">
                     <div>
                       <h3 className="font-display font-bold text-xl sm:text-2xl text-[#0c1f14]">
                         Request Your Free Quote
                       </h3>
                       <p className="text-xs sm:text-sm text-[#53685a] mt-0.5">
-                        Complete the form below and we&apos;ll arrange a convenient
-                        time.
+                        Complete the form below and we&apos;ll arrange a convenient time.
                       </p>
                     </div>
                     <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1e7b24] bg-[#e6f3e6] px-3 py-1.5 rounded-full self-start sm:self-center">
@@ -235,7 +234,7 @@ export function ContactSection({
                     </span>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
                       <label
                         htmlFor="quote-name"
@@ -250,7 +249,7 @@ export function ContactSection({
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="e.g. Sarah Jenkins"
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-sm text-[#0c1f14]"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-base sm:text-sm text-[#0c1f14]"
                       />
                     </div>
 
@@ -268,12 +267,12 @@ export function ContactSection({
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="e.g. 07700 900123"
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-sm text-[#0c1f14]"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-base sm:text-sm text-[#0c1f14]"
                       />
                     </div>
                   </div>
 
-                  <div className="grid sm:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
                     <div className="sm:col-span-2">
                       <label
                         htmlFor="quote-email"
@@ -288,7 +287,7 @@ export function ContactSection({
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="you@example.co.uk"
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-sm text-[#0c1f14]"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-base sm:text-sm text-[#0c1f14]"
                       />
                     </div>
 
@@ -305,7 +304,7 @@ export function ContactSection({
                         value={postcode}
                         onChange={(e) => setPostcode(e.target.value)}
                         placeholder="e.g. BH1 4BP"
-                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-sm uppercase text-[#0c1f14]"
+                        className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-base sm:text-sm uppercase text-[#0c1f14]"
                       />
                     </div>
                   </div>
@@ -321,7 +320,7 @@ export function ContactSection({
                       id="quote-service"
                       value={selectedService}
                       onChange={(e) => onServiceChange(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-sm text-[#0c1f14]"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-base sm:text-sm text-[#0c1f14]"
                     >
                       {SERVICES.map((s) => (
                         <option key={s.id} value={s.title}>
@@ -347,7 +346,7 @@ export function ContactSection({
                       value={projectNotes}
                       onChange={(e) => onProjectNotesChange(e.target.value)}
                       placeholder="Describe any damp, condensation, loft insulation, spray foam, roof, or solar goals..."
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-sm text-[#0c1f14] resize-y"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#d4dfd1] focus:border-[#2f9e35] focus:ring-2 focus:ring-[#2f9e35]/20 outline-none text-base sm:text-sm text-[#0c1f14] resize-y"
                     />
                   </div>
 

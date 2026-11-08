@@ -86,11 +86,13 @@ export function GallerySection({ onBookSurvey }: GallerySectionProps) {
               className="object-cover"
             />
             {/* Clean Left vs Right Indicators */}
-            <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-[#2f9e35] text-white text-xs font-bold shadow-lg">
-              ← Imprint Cleaned &amp; ProPERLA Protected
+            <div className="absolute top-3 sm:top-4 left-3 sm:left-4 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-[#2f9e35] text-white text-[10px] sm:text-xs font-bold shadow-lg">
+              <span className="hidden sm:inline">← Imprint Cleaned &amp; ProPERLA Protected</span>
+              <span className="sm:hidden">← Imprint Cleaned</span>
             </div>
-            <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-sm text-white/85 text-xs font-medium">
-              Untreated Neighbouring Roof →
+            <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-black/75 backdrop-blur-sm text-white/85 text-[10px] sm:text-xs font-medium">
+              <span className="hidden sm:inline">Untreated Neighbouring Roof →</span>
+              <span className="sm:hidden">Untreated Roof →</span>
             </div>
           </div>
 
@@ -206,23 +208,23 @@ export function GallerySection({ onBookSurvey }: GallerySectionProps) {
       {/* Lightbox Modal */}
       {activeLightboxItem && (
         <div
-          className="fixed inset-0 z-[80] bg-black/85 backdrop-blur-md flex items-center justify-center p-4"
+          className="fixed inset-0 z-[80] bg-black/85 backdrop-blur-md flex items-center justify-center p-2.5 sm:p-4"
           onClick={closeLightbox}
         >
           <div
-            className="relative max-w-4xl w-full bg-[#0c1f14] rounded-3xl overflow-hidden border border-white/15 text-white shadow-2xl"
+            className="relative max-w-4xl w-full bg-[#0c1f14] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/15 text-white shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={closeLightbox}
               aria-label="Close gallery preview"
-              className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center cursor-pointer"
+              className="absolute top-3 sm:top-4 right-3 sm:right-4 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="relative h-[52vh] sm:h-[62vh] w-full bg-black">
+            <div className="relative h-[42vh] sm:h-[60vh] w-full bg-black">
               <Image
                 src={activeLightboxItem.image}
                 alt={activeLightboxItem.title}
@@ -237,7 +239,7 @@ export function GallerySection({ onBookSurvey }: GallerySectionProps) {
                     type="button"
                     onClick={prevImage}
                     aria-label="Previous installation"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-[#3aa63a] text-white flex items-center justify-center transition-colors cursor-pointer"
+                    className="absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/60 hover:bg-[#3aa63a] text-white flex items-center justify-center transition-colors cursor-pointer"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
@@ -245,7 +247,7 @@ export function GallerySection({ onBookSurvey }: GallerySectionProps) {
                     type="button"
                     onClick={nextImage}
                     aria-label="Next installation"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-[#3aa63a] text-white flex items-center justify-center transition-colors cursor-pointer"
+                    className="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/60 hover:bg-[#3aa63a] text-white flex items-center justify-center transition-colors cursor-pointer"
                   >
                     <ChevronRight className="w-5 h-5" />
                   </button>
@@ -253,17 +255,17 @@ export function GallerySection({ onBookSurvey }: GallerySectionProps) {
               )}
             </div>
 
-            <div className="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-white/12">
+            <div className="p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 border-t border-white/12">
               <div>
                 <div className="flex items-center gap-2 text-xs text-[#6bf26b] font-semibold">
                   <span>{activeLightboxItem.category}</span>
                   <span>·</span>
                   <span>{activeLightboxItem.location}</span>
                 </div>
-                <h4 className="font-display font-bold text-lg sm:text-xl mt-0.5">
+                <h4 className="font-display font-bold text-base sm:text-xl mt-0.5">
                   {activeLightboxItem.title}
                 </h4>
-                <p className="text-xs sm:text-sm text-white/75 mt-1 max-w-2xl">
+                <p className="text-xs sm:text-sm text-white/75 mt-1 max-w-2xl line-clamp-2 sm:line-clamp-none">
                   {activeLightboxItem.caption}
                 </p>
               </div>
@@ -275,7 +277,7 @@ export function GallerySection({ onBookSurvey }: GallerySectionProps) {
                   closeLightbox();
                   onBookSurvey(cat);
                 }}
-                className="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#3aa63a] hover:bg-[#2f9e35] text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
+                className="w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-2 h-11 px-5 rounded-xl bg-[#3aa63a] hover:bg-[#2f9e35] text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
               >
                 <span>Quote Similar Project</span>
                 <ArrowRight className="w-4 h-4" />

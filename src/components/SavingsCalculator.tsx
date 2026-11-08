@@ -174,13 +174,13 @@ export function SavingsCalculator({
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Controls Card */}
-          <div className="lg:col-span-7 bg-white/[0.05] backdrop-blur-md rounded-3xl border border-white/12 p-6 sm:p-8 space-y-7">
+          <div className="lg:col-span-7 bg-white/[0.05] backdrop-blur-md rounded-2xl sm:rounded-3xl border border-white/12 p-4 sm:p-8 space-y-6 sm:space-y-7">
             {/* Step 1: Property Type */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#8bf08b] mb-3">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#8bf08b] mb-2.5 sm:mb-3">
                 1. Select Your UK Property Style
               </label>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
                 {PROPERTY_TYPES.map((prop) => {
                   const active = propertyType === prop.id;
                   return (
@@ -188,7 +188,7 @@ export function SavingsCalculator({
                       key={prop.id}
                       type="button"
                       onClick={() => setPropertyType(prop.id)}
-                      className={`px-3.5 py-3 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
+                      className={`px-2.5 sm:px-3.5 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
                         active
                           ? "bg-[#3aa63a] border-[#5ce65c] text-white shadow-[0_8px_20px_rgba(58,166,58,0.3)]"
                           : "bg-white/[0.04] border-white/12 text-white/80 hover:bg-white/[0.09]"
@@ -203,10 +203,10 @@ export function SavingsCalculator({
 
             {/* Step 2: Property Size */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#8bf08b] mb-3">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#8bf08b] mb-2.5 sm:mb-3">
                 2. Property Size
               </label>
-              <div className="grid grid-cols-3 gap-2.5">
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-2.5">
                 {BEDROOM_SIZES.map((bed) => {
                   const active = bedrooms === bed.id;
                   return (
@@ -214,7 +214,7 @@ export function SavingsCalculator({
                       key={bed.id}
                       type="button"
                       onClick={() => setBedrooms(bed.id)}
-                      className={`px-3.5 py-3 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
+                      className={`px-2 sm:px-3.5 py-2.5 sm:py-3 rounded-xl text-[11px] sm:text-sm font-semibold border transition-all cursor-pointer ${
                         active
                           ? "bg-[#3aa63a] border-[#5ce65c] text-white shadow-[0_8px_20px_rgba(58,166,58,0.3)]"
                           : "bg-white/[0.04] border-white/12 text-white/80 hover:bg-white/[0.09]"
@@ -229,10 +229,10 @@ export function SavingsCalculator({
 
             {/* Step 3: Home Priorities */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#8bf08b] mb-3">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#8bf08b] mb-2.5 sm:mb-3">
                 3. What Would You Like To Improve? (Select One or More)
               </label>
-              <div className="grid sm:grid-cols-2 gap-2.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                 {UPGRADE_GOALS.map((goal) => {
                   const Icon = goal.icon;
                   const selected = selectedGoals.includes(goal.id);
@@ -241,7 +241,7 @@ export function SavingsCalculator({
                       key={goal.id}
                       type="button"
                       onClick={() => toggleGoal(goal.id)}
-                      className={`flex items-center justify-between gap-3 p-3.5 rounded-xl border text-left transition-all cursor-pointer ${
+                      className={`flex items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl border text-left transition-all cursor-pointer ${
                         selected
                           ? "bg-[#2f9e35]/20 border-[#5ce65c] text-white"
                           : "bg-white/[0.03] border-white/12 text-white/75 hover:bg-white/[0.07]"
@@ -249,13 +249,13 @@ export function SavingsCalculator({
                     >
                       <div className="flex items-center gap-2.5">
                         <span
-                          className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
+                          className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center shrink-0 ${
                             selected
                               ? "bg-[#3aa63a] text-white"
                               : "bg-white/10 text-white/70"
                           }`}
                         >
-                          <Icon className="w-4 h-4" />
+                          <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         </span>
                         <span className="text-xs sm:text-sm font-semibold">
                           {goal.label}
@@ -279,23 +279,23 @@ export function SavingsCalculator({
           </div>
 
           {/* Right Live Output Panel */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#163823] to-[#0e2618] rounded-3xl border border-[#3aa63a]/40 p-6 sm:p-8 flex flex-col justify-between shadow-[0_24px_60px_rgba(0,0,0,0.4)]">
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#163823] to-[#0e2618] rounded-2xl sm:rounded-3xl border border-[#3aa63a]/40 p-4 sm:p-8 flex flex-col justify-between shadow-[0_24px_60px_rgba(0,0,0,0.4)]">
             <div>
-              <div className="flex items-center justify-between gap-2 pb-5 border-b border-white/12">
+              <div className="flex items-center justify-between gap-2 pb-4 sm:pb-5 border-b border-white/12">
                 <div>
-                  <span className="text-xs text-white/65">
+                  <span className="text-[11px] sm:text-xs text-white/65">
                     Estimated Bill &amp; Heat-Loss Saving
                   </span>
-                  <div className="font-mono font-extrabold text-4xl sm:text-5xl text-[#6bf26b] tracking-tight mt-1">
+                  <div className="font-mono font-extrabold text-3xl sm:text-5xl text-[#6bf26b] tracking-tight mt-1">
                     £{calculation.annualSaving.toLocaleString()}
-                    <span className="text-lg font-normal text-white/70">
+                    <span className="text-base sm:text-lg font-normal text-white/70">
                       /yr
                     </span>
                   </div>
                 </div>
-                <div className="text-right bg-white/10 rounded-2xl px-3.5 py-2.5 border border-white/10">
-                  <div className="text-[11px] text-white/65">10-Yr Value</div>
-                  <div className="font-mono font-bold text-lg text-white">
+                <div className="text-right bg-white/10 rounded-xl sm:rounded-2xl px-3 py-2 sm:px-3.5 sm:py-2.5 border border-white/10 shrink-0">
+                  <div className="text-[10px] sm:text-[11px] text-white/65">10-Yr Value</div>
+                  <div className="font-mono font-bold text-sm sm:text-lg text-white">
                     £{calculation.tenYearSaving.toLocaleString()}+
                   </div>
                 </div>

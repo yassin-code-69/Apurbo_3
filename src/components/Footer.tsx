@@ -80,18 +80,18 @@ export function Footer({ onSelectService, onBookSurvey }: FooterProps) {
                 .
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full lg:w-auto shrink-0">
               <button
                 type="button"
                 onClick={() => onBookSurvey()}
-                className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-[#3aa63a] hover:bg-[#2f9e35] text-white font-semibold text-sm whitespace-nowrap shrink-0 shadow-lg transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-[#3aa63a] hover:bg-[#2f9e35] text-white font-semibold text-sm whitespace-nowrap shadow-lg transition-colors cursor-pointer"
               >
                 <span>Get a Free Quote</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
               <a
                 href={COMPANY_INFO.phoneHref}
-                className="inline-flex items-center justify-center gap-2 h-12 px-5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-mono font-semibold text-sm whitespace-nowrap shrink-0 transition-colors"
+                className="inline-flex items-center justify-center gap-2 h-12 px-5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-mono font-semibold text-sm whitespace-nowrap transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#5ce65c] shrink-0" />
                 <span>{COMPANY_INFO.phoneDisplay}</span>

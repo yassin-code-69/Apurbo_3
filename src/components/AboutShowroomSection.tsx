@@ -143,11 +143,11 @@ export function AboutShowroomSection({
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3 pt-3">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 pt-3">
               <button
                 type="button"
                 onClick={() => onBookSurvey()}
-                className="inline-flex items-center justify-center gap-2 h-12 px-5 rounded-xl bg-[#0c1f14] hover:bg-[#2f9e35] text-white font-semibold text-sm whitespace-nowrap shrink-0 transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 h-12 px-5 rounded-xl bg-[#0c1f14] hover:bg-[#2f9e35] text-white font-semibold text-sm whitespace-nowrap transition-colors cursor-pointer"
               >
                 <span>Arrange Free Home Visit</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
@@ -157,7 +157,7 @@ export function AboutShowroomSection({
                 href={COMPANY_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 h-12 px-4 rounded-xl border border-[#d6e0d3] hover:border-[#2f9e35] text-[#0c1f14] font-semibold text-sm whitespace-nowrap shrink-0 transition-colors"
+                className="inline-flex items-center justify-center gap-2 h-12 px-4 rounded-xl border border-[#d6e0d3] hover:border-[#2f9e35] text-[#0c1f14] font-semibold text-sm whitespace-nowrap transition-colors"
               >
                 <MapPin className="w-4 h-4 text-[#2f9e35] shrink-0" />
                 <span>Showroom Directions (BH1 4BP)</span>
@@ -165,7 +165,7 @@ export function AboutShowroomSection({
 
               <a
                 href={COMPANY_INFO.phoneHref}
-                className="inline-flex items-center gap-2 h-12 px-3 text-sm font-mono font-semibold text-[#1e7b24] hover:underline whitespace-nowrap shrink-0"
+                className="inline-flex items-center justify-center gap-2 h-12 px-3 text-sm font-mono font-semibold text-[#1e7b24] hover:underline whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 shrink-0" />
                 <span>{COMPANY_INFO.phoneDisplay}</span>
