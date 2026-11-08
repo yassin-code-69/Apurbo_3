@@ -45,50 +45,65 @@ export function HeroSection({
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-[#0c1f14] text-white pt-10 pb-14 lg:pt-16 lg:pb-20 bg-dark-grid"
+      className="relative overflow-hidden bg-[#08170e] text-white pt-12 pb-16 lg:pt-18 lg:pb-22"
     >
-      {/* Ambient Radial Emerald Glow */}
+      {/* Full-Bleed Bournemouth Coastal Luxury Home Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero-bg-bournemouth.jpg"
+          alt="Luxury sustainable British home overlooking Bournemouth coast at dusk"
+          fill
+          priority
+          quality={90}
+          sizes="100vw"
+          className="object-cover object-center scale-[1.01]"
+        />
+        {/* Directional Left-to-Right Scrim so Typography Reads Effortlessly While Background Shines */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06130b]/90 via-[#08190f]/75 to-[#08190f]/52" />
+        {/* Top & Bottom Architectural Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07160d] via-transparent to-[#06130b]/45" />
+        {/* Subtle Architectural Grid Texture Overlay */}
+        <div className="absolute inset-0 bg-dark-grid opacity-45" />
+      </div>
+
+      {/* Soft Emerald Accent Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full bg-[#2f9e35]/20 blur-[130px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 right-0 w-[520px] h-[520px] rounded-full bg-[#3aa63a]/15 blur-[140px]"
+        className="pointer-events-none absolute -top-36 -left-36 z-0 w-[500px] h-[500px] rounded-full bg-[#2f9e35]/20 blur-[130px]"
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Editorial Headline & Conversion */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs sm:text-sm text-[#8bf08b] font-medium">
-              <Sparkles className="w-3.5 h-3.5 text-[#4ade4a]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0c2215]/75 backdrop-blur-md border border-[#5ce65c]/30 text-xs sm:text-sm text-[#8bf08b] font-medium shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-[#4ade4a] shrink-0" />
               <span>Bournemouth, Dorset &amp; UK Sustainable Home Specialists</span>
             </div>
 
-            <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-[-0.03em] text-white">
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-[-0.03em] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)]">
               Making Your Home{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5ce65c] via-[#3aa63a] to-[#9ef59e]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#67ef67] via-[#4ade4a] to-[#a6f7a6]">
                 Warmer, Drier
               </span>{" "}
               &amp; Energy-Smart.
             </h1>
 
-            <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]">
               Experienced quality craftsmen delivering tailored damp proofing,
               breathable{" "}
-              <span className="text-white font-medium">ProPERLA</span> wall
+              <span className="text-white font-semibold">ProPERLA</span> wall
               &amp; roof coatings,{" "}
-              <span className="text-white font-medium">
+              <span className="text-white font-semibold">
                 Knauf &amp; SuperFOIL
               </span>{" "}
               loft insulation, mortgage-safe spray foam removal, and{" "}
-              <span className="text-white font-medium">Sunsynk</span> solar PV
+              <span className="text-white font-semibold">Sunsynk</span> solar PV
               systems.
             </p>
 
             {/* Quick Value Bullets */}
-            <div className="grid sm:grid-cols-2 gap-2.5 pt-1 text-sm text-white/85">
+            <div className="grid sm:grid-cols-2 gap-2.5 pt-1 text-sm text-white/90">
               {[
                 "Watertight yet 100% breathable walls",
                 "Mortgage-ready spray foam removal",
@@ -96,7 +111,7 @@ export function HeroSection({
                 "Local Bournemouth showroom & team",
               ].map((point) => (
                 <div key={point} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#4ade4a] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#5ce65c] shrink-0" />
                   <span>{point}</span>
                 </div>
               ))}
@@ -107,7 +122,7 @@ export function HeroSection({
               <button
                 type="button"
                 onClick={() => onBookSurvey()}
-                className="inline-flex items-center justify-center gap-2.5 h-13 px-6 sm:px-7 rounded-xl bg-[#3aa63a] hover:bg-[#2f9e35] text-white font-semibold text-sm sm:text-base whitespace-nowrap shrink-0 shadow-[0_12px_32px_rgba(58,166,58,0.4)] hover:shadow-[0_16px_38px_rgba(58,166,58,0.52)] transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 h-13 px-6 sm:px-7 rounded-xl bg-[#3aa63a] hover:bg-[#2f9e35] text-white font-semibold text-sm sm:text-base whitespace-nowrap shrink-0 shadow-[0_12px_32px_rgba(58,166,58,0.45)] hover:shadow-[0_16px_38px_rgba(58,166,58,0.58)] transition-all cursor-pointer"
               >
                 <span>Get Your Free Home Survey</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
@@ -115,7 +130,7 @@ export function HeroSection({
 
               <a
                 href={COMPANY_INFO.phoneHref}
-                className="inline-flex items-center justify-center gap-2.5 h-13 px-5 sm:px-6 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-sm sm:text-base whitespace-nowrap shrink-0 transition-all"
+                className="inline-flex items-center justify-center gap-2.5 h-13 px-5 sm:px-6 rounded-xl bg-[#0c2114]/75 hover:bg-[#0c2114]/95 backdrop-blur-md border border-white/25 text-white font-semibold text-sm sm:text-base whitespace-nowrap shrink-0 transition-all"
               >
                 <Phone className="w-4 h-4 text-[#5ce65c] shrink-0" />
                 <span className="font-mono">{COMPANY_INFO.phoneDisplay}</span>
@@ -123,7 +138,7 @@ export function HeroSection({
             </div>
 
             {/* Compact Trust Proof Strip — Baseline Aligned */}
-            <div className="pt-5 border-t border-white/12 grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
+            <div className="pt-5 border-t border-white/15 grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
               <div>
                 <div className="h-7 flex items-center gap-1.5 whitespace-nowrap">
                   <span className="font-mono font-bold text-xl text-white">
@@ -137,7 +152,7 @@ export function HeroSection({
                     <Star className="w-3.5 h-3.5 fill-amber-400" />
                   </div>
                 </div>
-                <p className="text-xs text-white/65 mt-1">
+                <p className="text-xs text-white/75 mt-1">
                   Verified Google Rating
                 </p>
               </div>
@@ -145,15 +160,15 @@ export function HeroSection({
                 <div className="h-7 flex items-center font-mono font-bold text-xl text-white whitespace-nowrap">
                   Up to 35%
                 </div>
-                <p className="text-xs text-white/65 mt-1">
+                <p className="text-xs text-white/75 mt-1">
                   Heat Retention Gain
                 </p>
               </div>
               <div>
-                <div className="h-7 flex items-center font-mono font-bold text-xl text-[#5ce65c] whitespace-nowrap">
+                <div className="h-7 flex items-center font-mono font-bold text-xl text-[#67ef67] whitespace-nowrap">
                   100% Free
                 </div>
-                <p className="text-xs text-white/65 mt-1">
+                <p className="text-xs text-white/75 mt-1">
                   No-Obligation Quote
                 </p>
               </div>
@@ -162,9 +177,9 @@ export function HeroSection({
 
           {/* Right Column: Interactive British Sustainable Property Showcase */}
           <div className="lg:col-span-6">
-            <div className="relative rounded-3xl overflow-hidden border border-white/15 shadow-[0_28px_70px_rgba(0,0,0,0.55)] bg-[#102619]">
+            <div className="relative rounded-3xl overflow-hidden border border-white/25 shadow-[0_30px_80px_rgba(0,0,0,0.65)] bg-[#0d2216]/90 backdrop-blur-md">
               {/* Top Interactive Instruction Pill */}
-              <div className="absolute top-4 left-4 z-20 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0c1f14]/80 backdrop-blur-md border border-white/15 text-[11px] font-medium text-white/90">
+              <div className="absolute top-4 left-4 z-20 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0c1f14]/85 backdrop-blur-md border border-white/20 text-[11px] font-medium text-white/95">
                 <span className="w-2 h-2 rounded-full bg-[#4ade4a] animate-pulse" />
                 <span>Tap any green hotspot to inspect whole-home upgrades</span>
               </div>
@@ -223,7 +238,7 @@ export function HeroSection({
               </div>
 
               {/* Active Hotspot Live Specification Bar */}
-              <div className="relative z-20 px-5 py-4 bg-[#0d2316]/95 backdrop-blur-md border-t border-white/12 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="relative z-20 px-5 py-4 bg-[#0b1f13]/95 backdrop-blur-md border-t border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-[11px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-[#3aa63a]/25 text-[#7ef47e] border border-[#3aa63a]/40 whitespace-nowrap shrink-0">
@@ -241,7 +256,7 @@ export function HeroSection({
                 <button
                   type="button"
                   onClick={() => handleInspectService(activeHotspot.serviceId)}
-                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/10 hover:bg-[#3aa63a] text-white text-xs font-semibold transition-colors cursor-pointer self-start sm:self-center"
+                  className="shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/12 hover:bg-[#3aa63a] text-white text-xs font-semibold transition-colors cursor-pointer self-start sm:self-center"
                 >
                   <span>View Spec</span>
                   <ArrowRight className="w-3.5 h-3.5 shrink-0" />
@@ -251,10 +266,10 @@ export function HeroSection({
           </div>
         </div>
 
-        {/* Accredited Hardware & Systems Partner Bar */}
-        <div className="mt-12 lg:mt-16 pt-8 border-t border-white/12">
-          <div className="flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-white/55 font-semibold mb-4">
-            <ShieldCheck className="w-4 h-4 text-[#4ade4a]" />
+        {/* Frosted Glassmorphic Accredited Hardware & Systems Partner Bar */}
+        <div className="mt-12 lg:mt-16 pt-8 border-t border-white/15">
+          <div className="flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-white/75 font-semibold mb-4">
+            <ShieldCheck className="w-4 h-4 text-[#5ce65c] shrink-0" />
             <span>
               Installed Using Industry-Leading Accredited UK Systems &amp; Partners
             </span>
@@ -264,7 +279,7 @@ export function HeroSection({
             {ACCREDITED_PARTNERS.map((partner) => (
               <div
                 key={partner.name}
-                className="rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 px-3.5 py-3 transition-colors"
+                className="rounded-xl bg-[#0a1e12]/65 hover:bg-[#0d2718]/85 backdrop-blur-md border border-white/15 px-3.5 py-3 transition-colors shadow-sm"
               >
                 <div className="font-display font-bold text-sm text-white tracking-tight">
                   {partner.name}
@@ -272,7 +287,7 @@ export function HeroSection({
                 <div className="text-[11px] text-[#7ef47e] font-medium mt-0.5">
                   {partner.role}
                 </div>
-                <div className="text-[11px] text-white/55 mt-0.5 line-clamp-1">
+                <div className="text-[11px] text-white/65 mt-0.5 line-clamp-1">
                   {partner.detail}
                 </div>
               </div>
@@ -283,4 +298,3 @@ export function HeroSection({
     </section>
   );
 }
-

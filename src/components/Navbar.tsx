@@ -3,14 +3,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
   Phone,
-  Mail,
-  MapPin,
-  Clock,
   ChevronDown,
   Menu,
   X,
   ArrowRight,
-  Star,
   ShieldCheck,
 } from "lucide-react";
 import { ImprintLogo } from "./ImprintLogo";
@@ -49,57 +45,6 @@ export function Navbar({ onSelectService, onBookSurvey }: NavbarProps) {
 
   return (
     <>
-      {/* Top Bournemouth Trust & Contact Utility Bar */}
-      <div className="hidden lg:block bg-[#0c1f14] text-white/85 text-xs border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 h-10 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-5 min-w-0">
-            <a
-              href={COMPANY_INFO.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-[#5ce05c] transition-colors whitespace-nowrap truncate"
-            >
-              <MapPin className="w-3.5 h-3.5 text-[#3aa63a] shrink-0" />
-              <span>638 Christchurch Rd, Bournemouth, BH1 4BP</span>
-            </a>
-            <span className="text-white/20 shrink-0">|</span>
-            <span className="inline-flex items-center gap-1.5 text-white/75 whitespace-nowrap shrink-0">
-              <Clock className="w-3.5 h-3.5 text-[#3aa63a] shrink-0" />
-              <span>Mon–Fri: 09:00 – 17:00</span>
-            </span>
-          </div>
-
-          <div className="flex items-center gap-4 xl:gap-5 shrink-0">
-            <a
-              href={COMPANY_INFO.phoneHref}
-              className="xl:hidden inline-flex items-center gap-1.5 text-[#6bf26b] hover:text-white font-mono font-semibold whitespace-nowrap transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 shrink-0" />
-              <span>{COMPANY_INFO.phoneDisplay}</span>
-            </a>
-            <div className="inline-flex items-center gap-1.5 bg-white/10 px-2.5 py-1 rounded-full whitespace-nowrap">
-              <div className="flex items-center gap-0.5 text-amber-400">
-                <Star className="w-3 h-3 fill-amber-400" />
-                <Star className="w-3 h-3 fill-amber-400" />
-                <Star className="w-3 h-3 fill-amber-400" />
-                <Star className="w-3 h-3 fill-amber-400" />
-                <Star className="w-3 h-3 fill-amber-400" />
-              </div>
-              <span className="font-mono font-semibold text-[11px] text-white">
-                5.0 Google Rated
-              </span>
-            </div>
-            <a
-              href={COMPANY_INFO.emailHref}
-              className="inline-flex items-center gap-1.5 hover:text-[#5ce05c] transition-colors whitespace-nowrap"
-            >
-              <Mail className="w-3.5 h-3.5 text-[#3aa63a] shrink-0" />
-              <span>{COMPANY_INFO.email}</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Sticky Header — Mathematically Centered 3-Zone Grid on Desktop */}
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
